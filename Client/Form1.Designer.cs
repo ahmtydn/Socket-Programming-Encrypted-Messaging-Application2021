@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    partial class s
+    partial class Client
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -53,6 +53,7 @@
             this.lblbaglanti = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblgorunmez = new System.Windows.Forms.Label();
+            this.lblanahtarUyari = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -120,7 +121,7 @@
             // 
             // txtAnahtar
             // 
-            this.txtAnahtar.Location = new System.Drawing.Point(89, 98);
+            this.txtAnahtar.Location = new System.Drawing.Point(88, 98);
             this.txtAnahtar.Name = "txtAnahtar";
             this.txtAnahtar.Size = new System.Drawing.Size(282, 20);
             this.txtAnahtar.TabIndex = 5;
@@ -243,18 +244,19 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblanahtarUyari);
             this.panel2.Controls.Add(this.lblchckboxuyari);
             this.panel2.Controls.Add(this.lblbaglanti);
             this.panel2.Controls.Add(this.txName);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.shachkbox);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.txtAnahtar);
             this.panel2.Controls.Add(this.spnchkbox);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.txt_text);
-            this.panel2.Controls.Add(this.txtAnahtar);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(501, 215);
@@ -292,11 +294,19 @@
             this.lblgorunmez.AutoSize = true;
             this.lblgorunmez.Location = new System.Drawing.Point(18, 234);
             this.lblgorunmez.Name = "lblgorunmez";
-            this.lblgorunmez.Size = new System.Drawing.Size(35, 13);
+            this.lblgorunmez.Size = new System.Drawing.Size(0, 13);
             this.lblgorunmez.TabIndex = 19;
-            this.lblgorunmez.Text = "label5";
             // 
-            // s
+            // lblanahtarUyari
+            // 
+            this.lblanahtarUyari.AutoSize = true;
+            this.lblanahtarUyari.ForeColor = System.Drawing.Color.Red;
+            this.lblanahtarUyari.Location = new System.Drawing.Point(86, 121);
+            this.lblanahtarUyari.Name = "lblanahtarUyari";
+            this.lblanahtarUyari.Size = new System.Drawing.Size(0, 13);
+            this.lblanahtarUyari.TabIndex = 18;
+            // 
+            // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -305,8 +315,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "s";
+            this.Name = "Client";
             this.Text = "Şifreleme";
+            this.Load += new System.EventHandler(this.s_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -344,6 +355,7 @@
         private System.Windows.Forms.Label lblcozmesaj;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblgorunmez;
+        private System.Windows.Forms.Label lblanahtarUyari;
     }
 }
 

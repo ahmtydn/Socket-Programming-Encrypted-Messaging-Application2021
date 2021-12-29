@@ -3,10 +3,9 @@ using System.Text;
 
 namespace Encryption
 {
-    class SPN_encryption
+    public class SPN_encryption
     {
         private string plainText, bin_plainText, key, bin_Key, s_Boxes = "", cipherText;
-
 
         #region Constructors
         public SPN_encryption(string key)
@@ -25,7 +24,7 @@ namespace Encryption
 
         #region Convert to Binary/ to String
         //Convert string to binary
-        private string stringToBinary(string data)
+        public string stringToBinary(string data)
         {
             string binary = "";
             for (int i = 0; i < data.Length; i++)
@@ -44,9 +43,9 @@ namespace Encryption
 
             string binaryString = enctxt.Replace(" ", "");
 
-            var bytes = new byte[binaryString.Length / 8];
-
             var ilen = (int)(binaryString.Length / 8);
+
+            var bytes = new byte[ilen];
 
             for (var i = 0; i < ilen; i++)
             {

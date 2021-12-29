@@ -19,19 +19,19 @@ using Encryption;
 
 namespace Client
 {
-    public partial class s : Form
+    public partial class Client : Form
     {
         string text, finalText, binaryTotal;
         byte binaryFirst, binarySecond, notBinaryFirst;
         char[] charList;
-        char[] addList = {};
+        char[] addList = { };
         char[] mod;
         private Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        //InterNetwork = ipv4 ailesi için
-        //SocketType.Dgram= UDP için
-        //SocketType.Stream= TCP için
-        //ProtocolType.IP = TCP ve UDP 
-        public s()
+        /*InterNetwork = ipv4 ailesi için
+        SocketType.Dgram= UDP için
+        SocketType.Stream= TCP için
+        ProtocolType.IP = TCP ve UDP */
+        public Client()
         {
             InitializeComponent();
 
@@ -88,12 +88,12 @@ namespace Client
                 }
                 else
                 {
-                    //label3.Text = (gelen);
-                    TXTsonmesaj.Text=gelen + "\n";
+
+                    TXTsonmesaj.Text = gelen + "\n";
                 }
 
 
-                //rb_chat.AppendText("\nServer: " + label3.Text);
+
 
                 _clientSocket.BeginReceive(receivedBuf, 0, receivedBuf.Length, SocketFlags.None, new AsyncCallback(ReceiveData), _clientSocket);
                 /*
@@ -118,10 +118,10 @@ namespace Client
         {
             while (true)
             {
-                //Console.WriteLine("Enter a request: ");
-                //string req = Console.ReadLine();
-                //byte[] buffer = Encoding.ASCII.GetBytes(req);
-                //_clientSocket.Send(buffer);
+                /*Console.WriteLine("Enter a request: ");
+                string req = Console.ReadLine();
+                byte[] buffer = Encoding.ASCII.GetBytes(req);
+                _clientSocket.Send(buffer);*/
 
                 byte[] receivedBuf = new byte[1024];
                 int rev = _clientSocket.Receive(receivedBuf);
@@ -160,7 +160,7 @@ namespace Client
             _clientSocket.Send(buffer);//veriyi gönderdim servera
             lblbaglanti.Text = ("servere bağlandı!");//servere bağlandı
         }
- 
+
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -175,10 +175,17 @@ namespace Client
         private void button2_Click(object sender, EventArgs e)
         {
 
-            if (spnchkbox.Checked==true)
+
+            if (spnchkbox.Checked == true)
             {
-                if (txt_text.Text.Length % 2 == 1) { txt_text.Text += " "; }
-                else {
+                if (txt_text.Text.Length % 2 == 1)
+                {
+                    txt_text.Text += " ";
+
+                    MessageBox.Show("Mesaj uzunluğunuz tek sayı olduğundan düzenlendi.Lütfen Gönder butonuna tekrar basınız...");
+                }
+                else if (txtAnahtar.Text.Length == 8)
+                {
                     lblchckboxuyari.Text = "";
                     stopWatch.Start();
 
@@ -191,11 +198,15 @@ namespace Client
 
                     sifreliGonder(sifreli);
                 }
+                else
+                {
+                    MessageBox.Show("Spn Şifreleme için Anahtar uzunluğu 8 hane olmalıdır");
+                }
 
-                
-                
+
+
             }
-            else if (shachkbox.Checked==true)
+            else if (shachkbox.Checked == true)
             {
                 lblchckboxuyari.Text = "";
                 string password = txtAnahtar.Text;
@@ -205,16 +216,16 @@ namespace Client
                 sifreliGonder(encryptedText);
             }
             else
-                lblchckboxuyari.Text="Lütfen şifreleme türünü seçiniz...";
+                lblchckboxuyari.Text = "Lütfen şifreleme türünü seçiniz...";
 
-            
+
 
 
         }
-            private void sifreliGonder(string sifreli)
-            {
+        private void sifreliGonder(string sifreli)
+        {
 
-            
+
 
             if (_clientSocket.Connected)//client servera bağlı ise
             {
@@ -241,28 +252,28 @@ namespace Client
             }
         }
 
-       
+
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            
+
             if (spnchkbox.Checked == true)
             {
 
-                                                                                     
-              
-                    lblcozmesaj.Text = "";
 
-                    stopWatch.Start();
-                    
-                    SPN_encryption spn = new SPN_encryption(txtAnahtar.Text);
-                    string coz1 = spn.decrypt(TXTsonmesaj.Text.Trim());
 
-                    txtbxCozuldu.Text = coz1;
-                    stopWatch.Stop();
-                    TimeSpan t = stopWatch.Elapsed;
-                
-               
+                lblcozmesaj.Text = "";
+
+                stopWatch.Start();
+
+                SPN_encryption spn = new SPN_encryption(txtAnahtar.Text);
+                string coz1 = spn.decrypt(TXTsonmesaj.Text.Trim());
+
+                txtbxCozuldu.Text = coz1;
+                stopWatch.Stop();
+                TimeSpan t = stopWatch.Elapsed;
+
+
 
             }
             else if (shachkbox.Checked == true)
@@ -278,7 +289,7 @@ namespace Client
                 lblcozmesaj.Text = "Lütfen şifreleme türünü seçiniz...";
 
         }
-       
+
 
         public string Encrypt(string key, string data)
         {
@@ -366,7 +377,7 @@ namespace Client
             return Convert.ToBase64String(encrypted);
         }
 
-        
+
         private static string DecryptStringFromBytes_Aes(string cipherTextString, byte[] Key, byte[] IV)
         {
             byte[] cipherText = Convert.FromBase64String(cipherTextString);
@@ -402,17 +413,28 @@ namespace Client
             return plaintext;
         }
 
- 
 
-       
+
+
         private void shachkbox_MouseClick(object sender, MouseEventArgs e)
         {
             spnchkbox.Checked = false;
+            lblanahtarUyari.Text = "";
+            txtAnahtar.MaxLength = default;
         }
 
         private void spnchkbox_MouseClick(object sender, MouseEventArgs e)
         {
             shachkbox.Checked = false;
+            txtAnahtar.MaxLength = 8;
+            if (txtAnahtar.Text.Length == 8)
+            {
+                lblanahtarUyari.Text = "";
+            }
+            else
+            {
+                lblanahtarUyari.Text = "Spn Şifreleme için Anahtar uzunluğu 8 hane olmalıdır";
+            }
         }
 
         //SPN ŞİFRELEME
@@ -422,41 +444,64 @@ namespace Client
 
         public static string plainText, bin_plainText, key, bin_Key, s_Boxes = "", cipherText;
 
-        
+        private void s_Load(object sender, EventArgs e)
+        {
+            spnchkbox.Checked = true;
+            if (spnchkbox.Checked)
+            {
+                txtAnahtar.MaxLength = 8;
+            }
+        }
+
+        private void txtAnahtar_TextChanged(object sender, EventArgs e)
+        {
+            if (spnchkbox.Checked)
+            {
+
+                if (txtAnahtar.Text.Length == 8)
+                {
+                    lblanahtarUyari.Text = "";
+                }
+                else
+                {
+                    lblanahtarUyari.Text = "Spn Şifreleme için Anahtar uzunluğu 8 hane olmalıdır";
+                }
+            }
+        }
 
         private string MetinSifreleme()
         {
             finalText = "";
             charList = txt_text.Text.ToCharArray();
             mod = charList;
-            addList=key.ToCharArray();
+            addList = key.ToCharArray();
             for (int i = 0; i < charList.Length; i++)
             {
                 if (Convert.ToInt16(charList[i]) == 32)
                 {
                     finalText += " ";
-                   mod[i] = ' ';
+                    mod[i] = ' ';
                 }
                 else
                 {
 
                     binaryFirst = Convert.ToByte(Convert.ToInt16(charList[i]));
-                 
+
                     notBinaryFirst = unchecked((byte)(~binaryFirst)); //~binaryFirst;
-                   
+
                     binarySecond = Convert.ToByte(Convert.ToInt16(addList[i % addList.Length]));
-                 
+
                     binaryTotal = calcXOR(Convert.ToByte(notBinaryFirst), binarySecond);
-                    
+
                     finalText += (char)((Convert.ToInt32(binaryTotal, 2) % 26) + 65);
 
                     mod[i] = (char)(Convert.ToInt32(binaryTotal, 2) / 26 + 48);
 
                 }
-                
+
             }
             TXTsonmesaj.Text = finalText;
-            
+
 
             return finalText;
 
@@ -464,34 +509,34 @@ namespace Client
 
         private void moddoldurma()
         {
-           
+
             charList = txt_text.Text.ToCharArray();
             string binaryTotal2 = lblgorunmez.Text;
-            
+
             mod = charList;
             for (int i = 0; i < charList.Length; i++)
             {
                 mod[i] = (char)(Convert.ToInt32(binaryTotal2, 2) / 26 + 48);
-                
+
             }
-            
+
         }
-       
+
 
 
         private string MetinCozme()
         {
 
             string a = new string(mod);
-            char[] mod2=a.ToCharArray();
+            char[] mod2 = a.ToCharArray();
             text = TXTsonmesaj.Text;
             int temp;
             finalText = "";
             charList = text.ToCharArray();
-            addList=key.ToCharArray();
+            addList = key.ToCharArray();
             for (int i = 0; i < charList.Length; i++)
             {
-               
+
                 if (Convert.ToInt32(mod[i]) == 32)
                 {
                     finalText += " ";
@@ -504,12 +549,12 @@ namespace Client
                     temp = ((Convert.ToInt16(charList[i]) - 65) % 26) + ((Convert.ToInt32(mod2[i]) - 48) * 26);
                     MessageBox.Show(mod2[i].ToString());
                     binaryTotal = calcXOR(Convert.ToByte(temp), binarySecond);
-                    
+
                     byte temp2 = unchecked((byte)(~Convert.ToByte(Convert.ToInt32(binaryTotal, 2))));
                     finalText += (char)temp2;
                 }
             }
-            
+
             return finalText;
 
         }

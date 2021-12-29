@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5724cf3a-3453-4d55-a867-ba6ebec172a0": {
+      "ProjectGuid": "5724cf3a-3453-4d55-a867-ba6ebec172a0",
+      "DisplayName": "SPN Algoritması",
+      "ColorIndex": 0
+    },
+    "f9d56e14-324b-4fa4-b862-c2c17a10e6af": {
+      "ProjectGuid": "f9d56e14-324b-4fa4-b862-c2c17a10e6af",
+      "DisplayName": "Server",
+      "ColorIndex": 1
+    },
+    "f7916747-961b-49a6-a1c6-685d289e4c7f": {
+      "ProjectGuid": "f7916747-961b-49a6-a1c6-685d289e4c7f",
+      "DisplayName": "Client",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Diğer Dosyalar",
+      "ColorIndex": -1
+    },
+    "6a39dc58-4c9e-41d2-9ede-c340d0329f8e": {
+      "ProjectGuid": "6a39dc58-4c9e-41d2-9ede-c340d0329f8e",
+      "DisplayName": "ClientServer_Tests",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

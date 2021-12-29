@@ -8,3 +8,34 @@ C:\Users\HP Pavilion Gaming\Desktop\SPNalgoritmasi-master11\SPNalgoritmasi-maste
 C:\Users\HP Pavilion Gaming\Desktop\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 C:\Users\HP Pavilion Gaming\Desktop\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.exe
 C:\Users\HP Pavilion Gaming\Desktop\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.pdb
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.exe.config
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.exe
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.pdb
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.ServerForm.resources
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.GenerateResource.cache
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.exe
+C:\Users\Atama\OneDrive\Masaüstü\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.pdb
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.exe.config
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.exe
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.pdb
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.ServerForm.resources
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.GenerateResource.cache
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.exe
+C:\Users\Atama\OneDrive\Masaüstü\Yeni klasör\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.pdb
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.exe.config
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.exe
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\bin\Debug\Server.pdb
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.ServerForm.resources
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.GenerateResource.cache
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.exe
+C:\Users\ahmet\Downloads\Compressed\SPNalgoritmasi-master11\SPNalgoritmasi-master11\SPNalgoritmasi-master\Server\obj\Debug\Server.pdb
