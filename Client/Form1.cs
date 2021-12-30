@@ -27,16 +27,22 @@ namespace Client
         char[] addList = { };
         char[] mod;
         private Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        /*InterNetwork = ipv4 ailesi için
-        SocketType.Dgram= UDP için
-        SocketType.Stream= TCP için
-        ProtocolType.IP = TCP ve UDP */
+        /// <summary>
+        /// InterNetwork = ipv4 ailesi için
+        ///SocketType.Dgram= UDP için
+        ///SocketType.Stream= TCP için
+        ///ProtocolType.IP = TCP ve UDP
+        /// </summary>
         public Client()
         {
             InitializeComponent();
 
         }
         byte[] receivedBuf = new byte[1024];//veri almak için yer ayırdık
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void ReceiveData(IAsyncResult ar)//burası asenkron oldugu için hep çalışır thread gibi veriyi almak için
         {
 
@@ -114,6 +120,9 @@ namespace Client
 
         }
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         private void SendLoop()
         {
             while (true)
@@ -137,6 +146,9 @@ namespace Client
             }
         }
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         private void LoopConnect()
         {
             int attempts = 0;
@@ -161,6 +173,9 @@ namespace Client
             lblbaglanti.Text = ("servere bağlandı!");//servere bağlandı
         }
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -172,6 +187,9 @@ namespace Client
         private Stopwatch stopWatch = new Stopwatch();
         public static string anahtar;
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -222,6 +240,10 @@ namespace Client
 
 
         }
+
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         private void sifreliGonder(string sifreli)
         {
 
@@ -253,6 +275,9 @@ namespace Client
         }
 
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
 
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -291,6 +316,9 @@ namespace Client
         }
 
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         public string Encrypt(string key, string data)
         {
             string encData = null;
@@ -306,6 +334,9 @@ namespace Client
             return encData;
         }
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         public string Decrypt(string key, string data)
         {
             string decData = null;
@@ -321,6 +352,9 @@ namespace Client
             return decData;
         }
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         private byte[][] GetHashKeys(string key)
         {
             byte[][] result = new byte[2][];
@@ -342,6 +376,9 @@ namespace Client
             return result;
         }
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
 
         private static string EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)
         {
@@ -378,6 +415,9 @@ namespace Client
         }
 
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         private static string DecryptStringFromBytes_Aes(string cipherTextString, byte[] Key, byte[] IV)
         {
             byte[] cipherText = Convert.FromBase64String(cipherTextString);
@@ -415,6 +455,9 @@ namespace Client
 
 
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
 
         private void shachkbox_MouseClick(object sender, MouseEventArgs e)
         {
@@ -423,6 +466,9 @@ namespace Client
             txtAnahtar.MaxLength = default;
         }
 
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
         private void spnchkbox_MouseClick(object sender, MouseEventArgs e)
         {
             shachkbox.Checked = false;
@@ -439,7 +485,9 @@ namespace Client
 
         //SPN ŞİFRELEME
 
-
+        /// <summary>
+        /// re5yuedsafasdfasdf
+        /// </summary>
 
 
         public static string plainText, bin_plainText, key, bin_Key, s_Boxes = "", cipherText;
