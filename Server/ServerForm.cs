@@ -32,6 +32,9 @@ namespace Server
             __ClientSockets = new List<SocketT2h>();
         }
         //AsyncCallback demek thread gibi eş zamansız çalışabılıyor
+       /// <summary>
+       /// Server kurma fonksiyonu
+       /// </summary>
         private void SetupServer()
         {
 
@@ -49,7 +52,11 @@ namespace Server
              AsyncCallback temsilci (delegate) tipinden faydalanılır.
               */
         }
-        private void AppceptCallback(IAsyncResult ar)//kabul edilen soket buraya gelıyor
+        /// <summary>
+        /// kabul edilen soket buraya gelıyor
+        /// </summary>
+        /// <param name="ar"></param>
+        private void AppceptCallback(IAsyncResult ar)
         {
             Console.WriteLine("tekrardan buradayım");
             Socket socket = _serverSocket.EndAccept(ar);//
@@ -63,10 +70,14 @@ namespace Server
             Console.WriteLine("AppceptCallback metodu recursıve oldu");
         }
         static string sonlanan_clien = "";
+        /// <summary>
+        ///geri dönüş yapılacak soket
+        /// </summary>
+        /// <param name="ar"></param>
         private void ReceiveCallback(IAsyncResult ar)
         {
 
-            Socket socket = (Socket)ar.AsyncState;//geri dönüş yapılacak soket
+            Socket socket = (Socket)ar.AsyncState;
 
             if (socket.Connected)
             {
@@ -148,13 +159,7 @@ namespace Server
 
 
 
-                    //if (text.Contains("cik"))
-                    //{
-                    //    return;
-                    //}
-                    // reponse = "serverdan  :  " + text;
-                    //  Sendata(socket, reponse);
-
+                   
                 }//received==0 sa client çıkış yapmıştır onu listeden sil
                 else
                 {
@@ -166,7 +171,7 @@ namespace Server
                             Console.WriteLine("çıktıı");
 
 
-                            // label2.Text = "clientt: " + __ClientSockets.Count.ToString();
+                            
                         }
                     }
                 }
@@ -174,6 +179,10 @@ namespace Server
             socket.BeginReceive(_buffer, 0, _buffer.Length, SocketFlags.None, new AsyncCallback(ReceiveCallback), socket);//almaya başla soketten ReceiveCallback recursive
         }
 
+        /// <summary>
+        /// Çıkış yapan cilentlerin silinmesi
+        /// </summary>
+        /// <param name="sonlanan_client"></param>
         public void clientlerden_sil(string sonlanan_client)
         {
             string sil = "sil*" + sonlanan_clien;
@@ -192,6 +201,12 @@ namespace Server
                 }
             }
         }
+        /// <summary>
+        /// servere iletilen mesajın ilgili clientlere yönlendirilmesi
+        /// </summary>
+        /// <param name="cli"></param>
+        /// <param name="text"></param>
+        /// <param name="mesaj"></param>
         public void gonder_gelen_mesaji(string cli, string text, string mesaj)
         {
             //gelen=@@aa
@@ -235,12 +250,21 @@ namespace Server
                 Console.WriteLine("gonder_gelen_mesaji() hata " + e.Message);
             }
         }
-        void Sendata(Socket socket, string mesajj)//soket ve mesajı geldı
+        /// <summary>
+        /// soket ve mesajı geldı
+        /// </summary>
+        /// <param name="socket"></param>
+        /// <param name="mesajj"></param>
+        void Sendata(Socket socket, string mesajj)
         {
             byte[] data = Encoding.ASCII.GetBytes(mesajj);
             socket.BeginSend(data, 0, data.Length, SocketFlags.None, new AsyncCallback(SendCallback), socket);//sokete verıyı gonder
             _serverSocket.BeginAccept(new AsyncCallback(AppceptCallback), null);
         }
+
+        /// <summary>
+        /// isimlerin gönderilmesi
+        /// </summary>
         public void isimleri_gonder()
         {
             for (int j = 0; j < __ClientSockets.Count; j++)//soket sayısı kadar dön
@@ -276,7 +300,11 @@ namespace Server
                 this._Socket = socket;
             }
         }
-
+        /// <summary>
+        /// seçili cliente server tarafından mesaj iletilmesi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -294,6 +322,11 @@ namespace Server
             }
             richTextBox1.AppendText("\nServer: " + textBox1.Text);
         }
+        /// <summary>
+        /// Server form yüklendiğinde server kurma fonkiyonunun çalıştırılması
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void ServerForm_Load(object sender, EventArgs e)
         {
